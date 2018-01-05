@@ -6,7 +6,7 @@ var prefix = ("/");
 
 
 bot.on('ready', () => {
-    bot.user.setPresence({ game: { name: 'Maintenance', type : 0}});
+    bot.user.setPresence({ game: { name: 'Protect and Serve', type : 0}});
     console.log("Bot Ready");
 });
 
