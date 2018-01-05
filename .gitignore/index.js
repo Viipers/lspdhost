@@ -6,7 +6,7 @@ var prefix = ("/");
 
 
 bot.on('ready', () => {
-    bot.user.setPresence({ game: { name: 'Protect and Serve', type : 0}});
+    bot.user.setPresence({ game: { name: 'Maintenance', type : 0}});
     console.log("Bot Ready");
 });
 
@@ -25,12 +25,13 @@ bot.on('message', message => {
 
     if(!message.guild.roles.exists("name", "Police")) {
        return  message.channel.send(":rotating_light::rotating_light: Intrus detecté :rotating_light::rotating_light: Un administrateur sera averti!").catch(console.log(`** !!! ${message.author.username} : ** a essayé d'utilisé la commande lspd sur ${message.guild.name} voici son message: \`${say}\``));
-       
       }
 
 
            message.channel.send(`${say}`, {disableEveryone: false})
            message.delete()
-        console.log(`**${message.author.username} : ** a utilisé la commande lspd sur ${message.guild.name} voici son message: \`${say}\``);
+           console.log(`**${message.author.username} : ** a utilisé la commande lspd sur ${message.guild.name} voici son message: \`${say}\``)
+           bot.guilds.get('396360744687370242').channels.get('398820566070460426').send(`**${message.author.username} : ** a utilisé la commande lspd sur ${message.guild.name} voici son message: \`${say}\``);
+              
       }
 });
